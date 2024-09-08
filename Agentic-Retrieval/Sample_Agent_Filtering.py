@@ -24,9 +24,11 @@ prompt = PromptTemplate(
     input_variables=["question", "chapters"],
 )
 
+# Sample inputs: 
 Chapters = "Strategic Vision for Open-Source, \nDigital Transformation Needs in the Public Sector, \nAI Applications in the Public Sector"
 question = "What are the advantages of open-source in the context of digital transformation?"
 
+# Activating the agent workflow
 choose_filters_agent = prompt | llm | JsonOutputParser()
 
 print(choose_filters_agent.invoke({"question": question, "chapters": Chapters}))
